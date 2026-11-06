@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+issueTrackerURL="https://github.com/DuskyTheDolphin/stop-guard/issues"
+
+[[mods]]
+modId="forgeward_stopguard"
+version="1.0.1"
+displayName="Stop Guard"
+authors="DuskyTheDolphin"
+displayURL="https://github.com/DuskyTheDolphin/stop-guard"
+description='''
+Server only. After a server stop has saved every level, a daemon watchdog makes sure the process really exits: if a
+stuck non-daemon thread (e.g. a Distant Horizons world-gen thread) keeps the JVM alive, it logs the threads holding it
+and calls System.exit(0) after 15 s, then Runtime.halt(0) after 30 s more. A clean exit never sees it.
+'''
+
+[[dependencies.forgeward_stopguard]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,)"
+    ordering="NONE"
+    side="SERVER"

@@ -1,0 +1,4 @@
+build/
+libs/
+clientlibs/
+*.jar
